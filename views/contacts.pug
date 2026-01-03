@@ -13,3 +13,28 @@
 //-                 .card 
 //-                     h2.card__name #{contact.properties.firstname}  #{contact.properties.lastname}
 //-                     p.card__email #{contact.properties.email}
+
+
+doctype html
+html
+  head
+    title Home page
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Pets
+  
+    table
+      thead
+        tr
+          th Name
+          th Type
+          th Location
+      tbody
+        each contact in data
+          tr
+            td #{contact.plant_name}
+            td #{contact.plant_type}
+            td #{contact.plant_location}
+
+    a(href="/update-cobj") Add to this table
