@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title Update Plants
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Update Plants
+    form(action="/update-cobj", method="post")
+      label(for="plant_name") Plant Name:
+      input(type="text", name="plant_name", required)
+      label(for="plant_type") Plant Type:
+      input(type="text", name="plant_type", required)
+      label(for="plant_location") Plant Location:
+      input(type="text", name="plant_location", required)
+      button(type="submit") Submit
+
+    table
+      thead
+        tr
+          th Plant Name
+          th Plant Type
+          th Plant Location
+      tbody
+        each contact in data
+          tr
+            td #{contact.properties.plant_name}
+            td #{contact.properties.plant_type}
+            td #{contact.properties.plant_location}
+    a(href="/") Return to Home
